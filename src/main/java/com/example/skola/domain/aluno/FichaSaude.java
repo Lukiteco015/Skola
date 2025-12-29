@@ -1,5 +1,6 @@
 package com.example.skola.domain.aluno;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,6 +15,7 @@ public class FichaSaude {
 
     @OneToOne
     @JoinColumn(name = "aluno_id", nullable = false)
+    @JsonIgnore
     private Aluno aluno;
 
     private String alergias;

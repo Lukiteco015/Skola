@@ -3,7 +3,7 @@ package com.example.skola.controller;
 import com.example.skola.domain.escola.Escola;
 import com.example.skola.domain.escola.dto.AtualizacaoDTO;
 import com.example.skola.domain.escola.dto.CadastroDTO;
-import com.example.skola.service.escola.EscolaService;
+import com.example.skola.service.EscolaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

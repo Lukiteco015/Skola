@@ -1,4 +1,4 @@
-package com.example.skola.service.escola;
+package com.example.skola.service;
 
 import com.example.skola.domain.escola.Escola;
 import com.example.skola.domain.escola.EscolaRepository;
@@ -38,9 +38,7 @@ public class EscolaService {
     @Transactional
     public Escola atualizar(Long id, AtualizacaoDTO dto) {
 
-        Escola escola = repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Escola" +
-                        "não encontrada no sistema: " + id));
+        Escola escola = buscarPorId(id);
 
         if(dto.nome() != null && !dto.nome().isBlank()) {
             escola.setNome(dto.nome());

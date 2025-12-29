@@ -1,6 +1,7 @@
 package com.example.skola.domain.aluno;
 
 import com.example.skola.domain.responsavel.AlunoResponsavel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -26,7 +27,9 @@ public class Aluno {
     private String matricula;
     private LocalDate dataNasc;
     private LocalDate dataMatricula;
+    @Column(unique = true)
     private String rg;
+    @Column(unique = true)
     private String cpf;
     private String endereco;
     private String necessidadesEspeciais;
@@ -35,5 +38,6 @@ public class Aluno {
     private FichaSaude fichaSaude;
 
     @OneToMany(mappedBy = "aluno")
+    @JsonIgnore
     private List<AlunoResponsavel> responsaveis;
 }

@@ -1,6 +1,7 @@
 package com.example.skola.domain.responsavel;
 
 import com.example.skola.domain.aluno.Aluno;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ public class AlunoResponsavel {
     @ManyToOne
     @MapsId("alunoId")
     @JoinColumn(name = "aluno_id")
+    @JsonIgnore
     private Aluno aluno;
 
     @ManyToOne
